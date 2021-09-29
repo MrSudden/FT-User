@@ -1,0 +1,15 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>BottomPanelThree.qml</file>
+        <file>Login.qml</file>
+        <file>Menu.qml</file>
+        <file>MenuTopTabPanel.qml</file>
+        <file>Signup.qml</file>
+        <file>Station.qml</file>
+        <file>TopTabPanel.qml</file>
+        <file>About.qml</file>
+        <file>StationKP.qml</file>
+        <file>SplashScreen.qml</file>
+    </qresource>
+</RCC>

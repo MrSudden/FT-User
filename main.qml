@@ -238,19 +238,31 @@ ApplicationWindow {
                     var num = Number(myJsonObject.data["bosso"][i]["eta"])
                     var decia = (num % 60)
                     var deci = formatSeconds(decia)
-                    bs.modelA.append({"time": getTimes(num), "busID": myJsonObject.data["bosso"][i]["id"], "pos": myJsonObject.data["bosso"][i]["pos"], "eta": String(formatSeconds(Math.floor(myJsonObject.data["bosso"][i]["eta"] / 60))) + String(":") + String(deci), "status": myJsonObject.data["bosso"][i]["status"]})
+                    var unita = "mins"
+                    if ((num / 60) <= 0) {
+                        unita = "secs"
+                    }
+                    bs.modelA.append({"time": getTimes(num), "busID": myJsonObject.data["bosso"][i]["id"], "pos": myJsonObject.data["bosso"][i]["pos"], "eta": String(formatSeconds(Math.floor(myJsonObject.data["bosso"][i]["eta"] / 60))) + String(":") + String(deci) + String(" ") + String(unita), "status": myJsonObject.data["bosso"][i]["status"]})
                 }
                 for (var l = 0; l < myJsonObject.data["gk"]; l++) {
                     var numb = Number(myJsonObject.data["gidan"][l]["eta"])
                     var decib = (numb % 60)
                     var decis = formatSeconds(decib)
-                    gk.modelA.append({"time": getTimes(numb), "busID": myJsonObject.data["gidan"][l]["id"], "pos": myJsonObject.data["gidan"][l]["pos"], "eta": String(formatSeconds(Math.floor(myJsonObject.data["gidan"][l]["eta"] / 60))) + String(":") + String(decis), "status": myJsonObject.data["gidan"][l]["status"]})
+                    var unitb = "mins"
+                    if ((numb / 60) <= 0) {
+                        unitb = "secs"
+                    }
+                    gk.modelA.append({"time": getTimes(numb), "busID": myJsonObject.data["gidan"][l]["id"], "pos": myJsonObject.data["gidan"][l]["pos"], "eta": String(formatSeconds(Math.floor(myJsonObject.data["gidan"][l]["eta"] / 60))) + String(":") + String(decis) + String(" ") + String(unitb), "status": myJsonObject.data["gidan"][l]["status"]})
                 }
                 for (var h = 0; h < myJsonObject.data["kp"]; h++) {
                     var numbs = Number(myJsonObject.data["kpaku"][h]["eta"])
                     var decid = (numbs % 60)
                     var decij = formatSeconds(decid)
-                    kp.modelA.append({"time": getTimes(numbs), "destination": myJsonObject.data["kpaku"][h]["destination"], "busID": myJsonObject.data["kpaku"][h]["id"], "pos": myJsonObject.data["kpaku"][h]["pos"], "eta": String(formatSeconds(Math.floor(myJsonObject.data["kpaku"][h]["eta"] / 60))) + String(":") + String(decij), "status": myJsonObject.data["kpaku"][h]["status"]})
+                    var unitc = "mins"
+                    if ((numbs / 60) <= 0) {
+                        unitc = "secs"
+                    }
+                    kp.modelA.append({"time": getTimes(numbs), "destination": myJsonObject.data["kpaku"][h]["destination"], "busID": myJsonObject.data["kpaku"][h]["id"], "pos": myJsonObject.data["kpaku"][h]["pos"], "eta": String(formatSeconds(Math.floor(myJsonObject.data["kpaku"][h]["eta"] / 60))) + String(":") + String(decij) + String(" ") + String(unitc), "status": myJsonObject.data["kpaku"][h]["status"]})
                 }
                 gk.modelA.layoutChanged()
                 bs.modelA.layoutChanged()
